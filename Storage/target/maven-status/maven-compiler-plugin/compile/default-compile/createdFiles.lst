@@ -1,8 +1,0 @@
-org\example\dataStorage\ClientEventRepository.class
-org\example\services\Service.class
-org\example\entities\AccountEventEntity.class
-org\example\Main.class
-org\example\consumers\ClientEventConsumer.class
-org\example\dataStorage\AccountEventRepository.class
-org\example\entities\ClientEventEntity.class
-org\example\consumers\AccountEventConsumer.class
