@@ -1,0 +1,8 @@
+D:\BankProject\bank-app\Storage\src\main\java\org\example\entities\ClientEventEntity.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\consumers\AccountEventConsumer.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\dataStorage\AccountEventRepository.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\dataStorage\ClientEventRepository.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\consumers\ClientEventConsumer.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\services\Service.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\entities\AccountEventEntity.java
+D:\BankProject\bank-app\Storage\src\main\java\org\example\Main.java

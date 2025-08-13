@@ -1,0 +1,14 @@
+org\example\enums\DepositResult.class
+org\example\enums\WithdrawResult.class
+org\example\user_dao\UserRepository.class
+org\example\operations_dao\OperationClass.class
+org\example\enums\TransferResult.class
+org\example\enums\AddFindDeleteResult.class
+org\example\enums\Colors.class
+org\example\enums\CreateAccountResult.class
+org\example\enums\OperationTypes.class
+org\example\account_dao\AccountRepository.class
+org\example\operations_dao\OperationRepository.class
+org\example\enums\Gender.class
+org\example\account_dao\Account.class
+org\example\user_dao\User.class

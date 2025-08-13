@@ -1,0 +1,15 @@
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\account_dao\Account.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\account_dao\AccountRepository.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\AddFindDeleteResult.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\Colors.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\CreateAccountResult.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\DepositResult.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\Gender.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\OperationTypes.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\TransferResult.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\enums\WithdrawResult.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\friendship_dao\Friendship.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\operations_dao\OperationClass.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\operations_dao\OperationRepository.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\user_dao\User.java
+D:\BankProject\bank-app\DataStorage\src\main\java\org\example\user_dao\UserRepository.java
