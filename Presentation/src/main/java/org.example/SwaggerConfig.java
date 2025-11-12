@@ -12,7 +12,7 @@ public class SwaggerConfig {
     public OpenAPI swaggerApiConfig() {
         var info = new Info()
                 .title("Lab3")
-                .description("Bank system realization")
+                .description("Bank app realization")
                 .version("1.0");
         return new OpenAPI().info(info);
     }

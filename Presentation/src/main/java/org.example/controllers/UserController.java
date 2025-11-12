@@ -49,6 +49,7 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "User info returned"),
             @ApiResponse(responseCode = "404", description = "User not found")
     })
+
     @GetMapping("/{login}")
     public ResponseEntity<UserDTO> getUser(@PathVariable String login) {
         User user = userService.findUserByLogin(login);
