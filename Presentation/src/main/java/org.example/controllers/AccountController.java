@@ -36,7 +36,7 @@ public class AccountController {
             @ApiResponse(responseCode = "201", description = "Account created"),
             @ApiResponse(responseCode = "409", description = "Account with this ID already exists")
     })
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Void> addAccount(@RequestBody AccountDTO accountDto) {
         if (accountService.accountExists(accountDto.getUserDefinedId())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
