@@ -61,6 +61,7 @@ http://localhost:9090/api/gateway/client/my-accounts
 http://localhost:9090/api/gateway/client/my-account-by-id/{id}
 ```
 `id` - идентификатор счёта (задается самим пользователем)
+
 5) GET (получение списка друзей со списками их счетов)
 ```
 http://localhost:9090/api/gateway/client/friends-with-accounts
@@ -85,6 +86,18 @@ http://localhost:9090/api/gateway/client/{sender_account_id}/transfer/{target_ac
 ```
 http://localhost:9090/api/gateway/client/delete-friend/{user_login}
 ```
+11) POST (создание нового счёта)
+```
+http://localhost:9090/api/gateway/client/create-new-account
+```
+Body для создания счёта:
+```json
+{
+    "userDefinedId": 12, // номер счёта, который должен придумать пользователь
+    "balance": 100, // начальный баланс
+    "ownerLogin": "userElena" // свой логин
+}
+```
 Функционал, доступный админу
 1) POST (создание пользователя)
 ```
@@ -96,7 +109,7 @@ http://localhost:9090/api/gateway/admin/create-user
         "login": "TypicalUser",
         "password": "j_002cs",
         "role": "CLIENT",
-        "name": "John",
+        "userName": "John",
         "gender": "male",
         "hairColor": "brown",
         "age": 27

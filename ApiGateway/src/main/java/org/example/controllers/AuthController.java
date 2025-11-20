@@ -33,7 +33,7 @@ public class AuthController {
     private ResponseEntity<?> forwardUserToMainApp(FullUserDTO user) {
         AppUser appUser = new AppUser();
         appUser.setLogin(user.getLogin());
-        appUser.setName(user.getName());
+        appUser.setName(user.getUserName());
         appUser.setAge(user.getAge());
         appUser.setGender(user.getGender());
         appUser.setHairColor(user.getHairColor());

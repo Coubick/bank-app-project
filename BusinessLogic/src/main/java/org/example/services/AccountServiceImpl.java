@@ -17,9 +17,6 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Сервис для счёта
- */
 @Service
 public class AccountServiceImpl implements AccountService {
     private final BigDecimal BALANCE_DOES_NOT_EXISTS = BigDecimal.valueOf(-1);
@@ -36,9 +33,10 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public AddFindDeleteResult addAccount(Account account) {
+    public AddFindDeleteResult addAccount(Account account) { // приходит без owner_id
         User user = userRepository.findByLogin(account.getOwnerLogin());
         if (user != null) {
+            account.setOwnerId(user.getId()); // ставится owner_id (id владельца)
             accountRepository.save(account);
             accountEventProducer.sendAccountEvent(Integer.toString(account.getUserDefinedId()), account, String.valueOf(EventTypes.CREATED));
             return AddFindDeleteResult.Success;

@@ -1,6 +1,8 @@
 package org.example.clients;
 
 import org.example.DTO.AccountInfoDTO;
+import org.example.account.AppAccount;
+import org.example.user.AppUser;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,10 @@ public class AccountClient {
 
     public AccountClient(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
+    }
+
+    public void post(AppAccount appAccount){
+        restTemplate.postForObject(BASE_URL + "/create", appAccount, AppAccount.class);
     }
 
     public List<AccountInfoDTO> getAllAccounts() {

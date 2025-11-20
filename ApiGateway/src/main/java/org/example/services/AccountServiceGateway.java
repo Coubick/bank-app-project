@@ -1,9 +1,13 @@
 package org.example.services;
 
+import org.example.account.AppAccount;
 import org.example.clients.AccountClient;
 import org.example.DTO.AccountInfoDTO;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
+
+import javax.naming.ServiceUnavailableException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -15,6 +19,19 @@ public class AccountServiceGateway {
 
     public AccountServiceGateway(AccountClient accountClient) {
         this.accountClient = accountClient;
+    }
+
+    public void forwardAccountToMainApp(AccountInfoDTO accountInfoDTO) throws ServiceUnavailableException {
+        AppAccount appAccount = new AppAccount();
+        appAccount.setUserDefinedId(accountInfoDTO.getUserDefinedId());
+        appAccount.setBalance(accountInfoDTO.getBalance());
+        appAccount.setOwnerLogin(accountInfoDTO.getOwnerLogin());
+
+        try{
+            accountClient.post(appAccount);
+        } catch (HttpClientErrorException e) {
+            throw new ServiceUnavailableException("Main application error: " + e.getResponseBodyAsString());
+        }
     }
 
     public List<AccountInfoDTO> getMyAccountById(int id, Authentication authentication) {

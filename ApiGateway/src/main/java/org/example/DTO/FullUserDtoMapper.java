@@ -14,7 +14,7 @@ public class FullUserDtoMapper {
 
         FullUserDTO fullUserDTO = new FullUserDTO();
         fullUserDTO.setLogin(appUser.getLogin());
-        fullUserDTO.setName(appUser.getName());
+        fullUserDTO.setUserName(appUser.getName());
         fullUserDTO.setGender(appUser.getGender());
         fullUserDTO.setAge(appUser.getAge());
         fullUserDTO.setHairColor(appUser.getHairColor());

@@ -10,17 +10,17 @@ import java.util.List;
 public class UserMapper {
     public User toEntity(UserDTO dto) {
         User user = new User();
-        user.setName(dto.getUserName());
         user.setLogin(dto.getLogin());
-        user.setAge(dto.getAge());
+        user.setName(dto.getName());
         user.setGender(dto.getGender());
         user.setHairColor(dto.getHairColor());
+        user.setAge(dto.getAge());
         return user;
     }
 
     public UserDTO toDto(User user) {
         UserDTO dto = new UserDTO();
-        dto.setUserName(user.getName());
+        dto.setName(user.getName());
         dto.setLogin(user.getLogin());
         dto.setAge(user.getAge());
         dto.setGender(user.getGender());

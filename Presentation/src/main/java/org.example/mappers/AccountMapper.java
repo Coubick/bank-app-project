@@ -14,7 +14,6 @@ public class AccountMapper {
         Account account = new Account();
         account.setUserDefinedId(dto.getUserDefinedId());
         account.setOwnerLogin(dto.getOwnerLogin());
-        account.setOwnerId(dto.getOwnerId());
         account.setBalance(dto.getBalance());
         return account;
     }
@@ -23,7 +22,6 @@ public class AccountMapper {
         AccountDTO dto = new AccountDTO();
         dto.setUserDefinedId(account.getUserDefinedId());
         dto.setBalance(account.getBalance());
-        dto.setOwnerId(account.getOwnerId());
         dto.setOwnerLogin(account.getOwnerLogin());
         return dto;
     }

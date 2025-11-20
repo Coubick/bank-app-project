@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.ServiceUnavailableException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -22,6 +23,12 @@ public class ClientController {
     public ClientController(UserService userService, AccountServiceGateway accountServiceGateway) {
         this.userService = userService;
         this.accountServiceGateway = accountServiceGateway;
+    }
+
+    @PostMapping("/create-new-account")
+    public ResponseEntity<String> createNewAccount(@RequestBody AccountInfoDTO accountInfoDTO) throws ServiceUnavailableException {
+        accountServiceGateway.forwardAccountToMainApp(accountInfoDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/get-info-about-client")

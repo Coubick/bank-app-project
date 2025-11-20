@@ -1,5 +1,6 @@
 package org.example.services;
 
+import jakarta.transaction.Transactional;
 import org.example.DTO.AccountInfoDTO;
 import org.example.DTO.FullUserDTO;
 import org.example.DTO.FullUserDtoMapper;
@@ -40,7 +41,7 @@ public class AdminService {
     private void forwardUserToMainApp(FullUserDTO user) throws ServiceUnavailableException {
         AppUser appUser = new AppUser();
         appUser.setLogin(user.getLogin());
-        appUser.setName(user.getName());
+        appUser.setName(user.getUserName());
         appUser.setAge(user.getAge());
         appUser.setGender(user.getGender());
         appUser.setHairColor(user.getHairColor());
@@ -52,23 +53,19 @@ public class AdminService {
         }
     }
 
+    @Transactional
     public void createUser(FullUserDTO signupRequestUserDTO) throws Exception {
         if (gatewayUserRepository.existsByLogin(signupRequestUserDTO.getLogin())) {
             throw new Exception("Choose other login");
         }
 
-        if (!List.of("ADMIN", "CLIENT").contains(signupRequestUserDTO.getRole())) {
-            throw new IllegalArgumentException("Invalid role");
-        }
-
+        forwardUserToMainApp(signupRequestUserDTO);
 
         GatewayUser gatewayUser = new GatewayUser();
         gatewayUser.setLogin(signupRequestUserDTO.getLogin());
         gatewayUser.setPassword(passwordEncoder.encode(signupRequestUserDTO.getPassword()));
         gatewayUser.setRole(signupRequestUserDTO.getRole());
         gatewayUserRepository.save(gatewayUser);
-
-        forwardUserToMainApp(signupRequestUserDTO);
     }
 
     public List<AccountInfoDTO> getAllAccounts() {
