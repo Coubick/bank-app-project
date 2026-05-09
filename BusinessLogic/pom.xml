@@ -50,5 +50,59 @@
             <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- T E S T I N G -->
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.2.3</version> <!-- ДОБАВЛЕНА ВЕРСИЯ -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Testcontainers (для интеграционных тестов БД) -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>1.19.7</version> <!-- ДОБАВЛЕНА ВЕРСИЯ -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- REST Assured (для API тестов) -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version> <!-- ДОБАВЛЕНА ВЕРСИЯ -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>5.14.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Обновленный Byte Buddy для поддержки Java 21 -->
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.14.12</version> <!-- версия с поддержкой Java 21 -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy-agent</artifactId>
+            <version>1.14.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
