@@ -23,9 +23,14 @@ public class AccountServiceTest {
     @Mock
     private AccountRepository accountRepository;
 
+    @Mock
+    private OperationRepository operationRepository;
+
+    @Mock
+    private AccountEventProducer accountEventProducer;
+
     @InjectMocks
     private AccountServiceImpl accountService;
-
     @Test
     public void deposit_DepositCorrectAmount_SuccessfullyDep(){
         Account account = new Account(123, "bob");

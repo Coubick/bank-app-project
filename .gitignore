@@ -30,7 +30,4 @@ bin/
 .DS_Store
 
 
-./BusinessLogic/target/
-./DataStorage/target/
-./Presentation/target/
-./Storage/target/
+target/
